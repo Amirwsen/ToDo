@@ -68,7 +68,7 @@ public class TaskRepository : ITaskRepository
         task.IsDeleted = true;
         await _context.SaveChangesAsync(cancellationToken);
         await CompleteAsync(cancellationToken);
-        var message = $"{task.Title} has been deleted";
+        var message = $"{task.Title} with Id '{task.Id}' has been deleted";
         return message;
     }
 
